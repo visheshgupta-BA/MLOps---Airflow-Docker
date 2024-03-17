@@ -1,0 +1,43 @@
+[2024-03-17T01:22:18.093+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: Airflow_Lab2.send_email manual__2024-03-17T01:22:02.569758+00:00 [queued]>
+[2024-03-17T01:22:18.098+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: Airflow_Lab2.send_email manual__2024-03-17T01:22:02.569758+00:00 [queued]>
+[2024-03-17T01:22:18.099+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2024-03-17T01:22:18.099+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 1
+[2024-03-17T01:22:18.099+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2024-03-17T01:22:18.106+0000] {taskinstance.py:1300} INFO - Executing <Task(EmailOperator): send_email> on 2024-03-17 01:22:02.569758+00:00
+[2024-03-17T01:22:18.110+0000] {standard_task_runner.py:55} INFO - Started process 1556 to run task
+[2024-03-17T01:22:18.112+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'Airflow_Lab2', 'send_email', 'manual__2024-03-17T01:22:02.569758+00:00', '--job-id', '55', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmphglnuge6']
+[2024-03-17T01:22:18.113+0000] {standard_task_runner.py:83} INFO - Job 55: Subtask send_email
+[2024-03-17T01:22:18.155+0000] {task_command.py:388} INFO - Running <TaskInstance: Airflow_Lab2.send_email manual__2024-03-17T01:22:02.569758+00:00 [running]> on host 3dffa19c86ca
+[2024-03-17T01:22:18.194+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=Airflow_Lab2
+AIRFLOW_CTX_TASK_ID=send_email
+AIRFLOW_CTX_EXECUTION_DATE=2024-03-17T01:22:02.569758+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-03-17T01:22:02.569758+00:00
+[2024-03-17T01:22:18.205+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/email.py:152: RemovedInAirflow3Warning: Fetching SMTP credentials from configuration variables will be deprecated in a future release. Please set credentials using a connection instead.
+  send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+
+[2024-03-17T01:22:18.206+0000] {email.py:268} INFO - Email alerting: attempt 1
+[2024-03-17T01:22:18.760+0000] {email.py:280} INFO - Sent an alert email to ['guptavishesh264@@gmail.com']
+[2024-03-17T01:22:18.868+0000] {taskinstance.py:1768} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/email.py", line 87, in execute
+    custom_headers=self.custom_headers,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/email.py", line 91, in send_email
+    **kwargs,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/email.py", line 152, in send_email_smtp
+    send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/email.py", line 281, in send_mime_email
+    smtp_conn.sendmail(e_from, e_to, mime_msg.as_string())
+  File "/usr/local/lib/python3.7/smtplib.py", line 886, in sendmail
+    raise SMTPRecipientsRefused(senderrs)
+smtplib.SMTPRecipientsRefused: {'guptavishesh264@@gmail.com': (553, b'5.1.3 The recipient address <guptavishesh264@@gmail.com> is not a valid RFC\n5.1.3 5321 address. For more information, go to\n5.1.3  https://support.google.com/a/answer/3221692 and review RFC 5321\n5.1.3 specifications. hf21-20020a05622a609500b00430b74c1661sm1597827qtb.97 - gsmtp')}
+[2024-03-17T01:22:18.890+0000] {taskinstance.py:1323} INFO - Marking task as FAILED. dag_id=Airflow_Lab2, task_id=send_email, execution_date=20240317T012202, start_date=20240317T012218, end_date=20240317T012218
+[2024-03-17T01:22:18.893+0000] {email.py:268} INFO - Email alerting: attempt 1
+[2024-03-17T01:22:19.341+0000] {email.py:280} INFO - Sent an alert email to ['guptavishesh264@gmail.com']
+[2024-03-17T01:22:20.480+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 55 for task send_email ({'guptavishesh264@@gmail.com': (553, b'5.1.3 The recipient address <guptavishesh264@@gmail.com> is not a valid RFC\n5.1.3 5321 address. For more information, go to\n5.1.3  https://support.google.com/a/answer/3221692 and review RFC 5321\n5.1.3 specifications. hf21-20020a05622a609500b00430b74c1661sm1597827qtb.97 - gsmtp')}; 1556)
+[2024-03-17T01:22:20.507+0000] {local_task_job.py:208} INFO - Task exited with return code 1
+[2024-03-17T01:22:20.532+0000] {taskinstance.py:2578} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,28 @@
+[2024-03-17T01:33:36.874+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: Airflow_Lab2.task_using_linked_owner manual__2024-03-17T01:33:34.869581+00:00 [queued]>
+[2024-03-17T01:33:36.880+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: Airflow_Lab2.task_using_linked_owner manual__2024-03-17T01:33:34.869581+00:00 [queued]>
+[2024-03-17T01:33:36.880+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2024-03-17T01:33:36.881+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 1
+[2024-03-17T01:33:36.881+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2024-03-17T01:33:36.888+0000] {taskinstance.py:1300} INFO - Executing <Task(BashOperator): task_using_linked_owner> on 2024-03-17 01:33:34.869581+00:00
+[2024-03-17T01:33:36.893+0000] {standard_task_runner.py:55} INFO - Started process 2280 to run task
+[2024-03-17T01:33:36.895+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'Airflow_Lab2', 'task_using_linked_owner', 'manual__2024-03-17T01:33:34.869581+00:00', '--job-id', '67', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmpwj1lbhyi']
+[2024-03-17T01:33:36.897+0000] {standard_task_runner.py:83} INFO - Job 67: Subtask task_using_linked_owner
+[2024-03-17T01:33:36.930+0000] {task_command.py:388} INFO - Running <TaskInstance: Airflow_Lab2.task_using_linked_owner manual__2024-03-17T01:33:34.869581+00:00 [running]> on host 3dffa19c86ca
+[2024-03-17T01:33:36.985+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Vishesh Gupta
+AIRFLOW_CTX_DAG_ID=Airflow_Lab2
+AIRFLOW_CTX_TASK_ID=task_using_linked_owner
+AIRFLOW_CTX_EXECUTION_DATE=2024-03-17T01:33:34.869581+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-03-17T01:33:34.869581+00:00
+[2024-03-17T01:33:36.986+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2024-03-17T01:33:36.987+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'echo 1']
+[2024-03-17T01:33:36.996+0000] {subprocess.py:86} INFO - Output:
+[2024-03-17T01:33:36.998+0000] {subprocess.py:93} INFO - 1
+[2024-03-17T01:33:36.998+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-03-17T01:33:37.014+0000] {taskinstance.py:1323} INFO - Marking task as SUCCESS. dag_id=Airflow_Lab2, task_id=task_using_linked_owner, execution_date=20240317T013334, start_date=20240317T013336, end_date=20240317T013337
+[2024-03-17T01:33:37.033+0000] {local_task_job.py:208} INFO - Task exited with return code 0
+[2024-03-17T01:33:37.053+0000] {taskinstance.py:2578} INFO - 1 downstream tasks scheduled from follow-on schedule check

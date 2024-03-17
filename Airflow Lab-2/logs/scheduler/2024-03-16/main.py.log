@@ -1,0 +1,26 @@
+[2024-03-16T23:07:30.033+0000] {processor.py:153} INFO - Started process (PID=52) to work on /opt/airflow/dags/main.py
+[2024-03-16T23:07:30.035+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/main.py for tasks to queue
+[2024-03-16T23:07:30.036+0000] {logging_mixin.py:137} INFO - [2024-03-16T23:07:30.035+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/main.py
+[2024-03-16T23:07:32.070+0000] {logging_mixin.py:137} INFO - [2024-03-16T23:07:32.058+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/main.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/main.py", line 133, in <module>
+    owner_task >> load_data_task >> data_preprocessing_task >> separate_data_outputs_task >> build_save_model_task >> load_model_task >> send_email >> TriggerDagRunOperator
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskmixin.py", line 81, in __rshift__
+    self.set_downstream(other)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskmixin.py", line 230, in set_downstream
+    self._set_relatives(task_or_task_list, upstream=False, edge_modifier=edge_modifier)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskmixin.py", line 200, in _set_relatives
+    self.dag = dag
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 981, in __setattr__
+    super().__setattr__(key, value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 1039, in dag
+    dag.add_task(self)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dag.py", line 2328, in add_task
+    raise AirflowException("DAG is missing the start_date parameter")
+airflow.exceptions.AirflowException: DAG is missing the start_date parameter
+[2024-03-16T23:07:32.079+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/main.py
+[2024-03-16T23:07:32.193+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/main.py took 2.183 seconds

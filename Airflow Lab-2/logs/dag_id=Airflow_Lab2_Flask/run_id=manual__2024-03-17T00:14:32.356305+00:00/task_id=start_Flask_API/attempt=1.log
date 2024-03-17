@@ -1,0 +1,26 @@
+[2024-03-17T00:14:32.804+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: Airflow_Lab2_Flask.start_Flask_API manual__2024-03-17T00:14:32.356305+00:00 [queued]>
+[2024-03-17T00:14:32.810+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: Airflow_Lab2_Flask.start_Flask_API manual__2024-03-17T00:14:32.356305+00:00 [queued]>
+[2024-03-17T00:14:32.810+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2024-03-17T00:14:32.810+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 1
+[2024-03-17T00:14:32.810+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2024-03-17T00:14:32.817+0000] {taskinstance.py:1300} INFO - Executing <Task(PythonOperator): start_Flask_API> on 2024-03-17 00:14:32.356305+00:00
+[2024-03-17T00:14:32.820+0000] {standard_task_runner.py:55} INFO - Started process 460 to run task
+[2024-03-17T00:14:32.822+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'Airflow_Lab2_Flask', 'start_Flask_API', 'manual__2024-03-17T00:14:32.356305+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/Flask_API.py', '--cfg-path', '/tmp/tmp06dh1iu1']
+[2024-03-17T00:14:32.822+0000] {standard_task_runner.py:83} INFO - Job 11: Subtask start_Flask_API
+[2024-03-17T00:14:32.854+0000] {task_command.py:388} INFO - Running <TaskInstance: Airflow_Lab2_Flask.start_Flask_API manual__2024-03-17T00:14:32.356305+00:00 [running]> on host d8b0252a8521
+[2024-03-17T00:14:32.892+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=Airflow_Lab2_Flask
+AIRFLOW_CTX_TASK_ID=start_Flask_API
+AIRFLOW_CTX_EXECUTION_DATE=2024-03-17T00:14:32.356305+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-03-17T00:14:32.356305+00:00
+[2024-03-17T00:14:32.904+0000] {logging_mixin.py:137} INFO -  * Serving Flask app 'unusual_prefix_fb1fa9258fa1ad786b4829a3672e98fa2e7542a0_Flask_API'
+[2024-03-17T00:14:32.904+0000] {logging_mixin.py:137} INFO -  * Debug mode: off
+[2024-03-17T00:14:32.905+0000] {_internal.py:224} INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.21.0.4:5001
+[2024-03-17T00:14:32.905+0000] {_internal.py:224} INFO - [33mPress CTRL+C to quit[0m
